@@ -6,8 +6,8 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.Category = require('./category')(sequelize, DataTypes);
-db.Specialite = require('./specialite')(sequelize, DataTypes);
-db.Artisan = require('./artisan')(sequelize, DataTypes);
+db.Specialite = require('./Specialite')(sequelize, DataTypes);
+db.Artisan = require('./Artisan')(sequelize, DataTypes);
 
 db.Category.hasMany(db.Specialite, { foreignKey: 'categorieId' });
 db.Specialite.belongsTo(db.Category, { foreignKey: 'categorieId' });
