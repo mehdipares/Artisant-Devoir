@@ -10,11 +10,11 @@ export default function ArtisanListPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let url = 'http://localhost:5000/api/artisans';
+        let url = 'https://artisant-devoir.onrender.com/api/artisans';
         if (specialiteId) {
-          url = `http://localhost:5000/api/artisans/by-specialite/${specialiteId}`;
+          url = `https://artisant-devoir.onrender.com/api/artisans/by-specialite/${specialiteId}`;
         } else if (categorieId) {
-          url = `http://localhost:5000/api/artisans/by-category/${categorieId}`;
+          url = `https://artisant-devoir.onrender.com/api/artisans/by-category/${categorieId}`;
         }
         const res = await axios.get(url);
         setArtisans(res.data);
@@ -30,7 +30,7 @@ export default function ArtisanListPage() {
     const targetCategorieId = categorieId || (specialiteId && artisans[0]?.Specialite?.categorieId);
 
     if (targetCategorieId) {
-      axios.get('http://localhost:5000/api/specialites')
+      axios.get('https://artisant-devoir.onrender.com/api/specialites')
         .then(res => {
           const filtered = res.data.filter(s => s.categorieId == targetCategorieId);
           setSpecialites(filtered);

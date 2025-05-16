@@ -13,7 +13,7 @@ export default function SearchResultsPage() {
 
   useEffect(() => {
     if (query) {
-      axios.get(`http://localhost:5000/api/search?q=${query}`)
+      axios.get(`https://artisant-devoir.onrender.com/api/search?q=${query}`)
         .then(res => setResults(res.data))
         .catch(err => console.error(err));
     }

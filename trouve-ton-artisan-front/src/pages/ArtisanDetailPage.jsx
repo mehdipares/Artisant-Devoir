@@ -8,7 +8,7 @@ export default function ArtisanDetailPage() {
 
   // ✅ Récupère les infos de l'artisan à l'ouverture de la page
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/artisans/${id}`)
+    axios.get(`https://artisant-devoir.onrender.com/api/artisans/${id}`)
       .then(res => setArtisan(res.data))
       .catch(err => console.error(err));
   }, [id]);

@@ -6,7 +6,7 @@ export default function HomePage() {
   const [topArtisans, setTopArtisans] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/artisans/top')
+    axios.get('https://artisant-devoir.onrender.com/api/artisans/top')
       .then(res => setTopArtisans(res.data))
       .catch(err => console.error(err));
   }, []);
