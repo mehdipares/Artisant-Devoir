@@ -6,7 +6,7 @@ export default function Header() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/categories')
+    axios.get('https://artisant-devoir.onrender.com/api/categories')
       .then(res => setCategories(res.data))
       .catch(err => console.error(err));
   }, []);
