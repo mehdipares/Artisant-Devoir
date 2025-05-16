@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nos Tarifs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      margin: 2rem;
+    }
+    .accordion {
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    .accordion-item {
+      border-top: 1px solid #e0d0c5;
+    }
+    .accordion-header {
+      background: linear-gradient(to right, #dab29f, #c49d8b);
+      color: white;
+      padding: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .accordion-content {
+      background: #fefaf8;
+      display: none;
+      padding: 1rem;
+    }
+    .prestation {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #e8d9d0;
+      padding: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center; color: #b5836a;">Nos Tarifs</h2>
+  <div class="accordion" id="accordion-container"></div>
+
+  <script>
+    const data = [{"categorie": "Première consultation obligatoire", "prestations": [{"nom": "Première consultation OFFERTE", "prix": "Offert", "duree": "15min"}]}, {"categorie": "Femmes - Forfait épilation laser", "prestations": [{"nom": "Aisselles Femme", "prix": "20 €", "duree": "20min"}, {"nom": "Forfait Maillot Simple + Aisselles + Demi-Jambes", "prix": "120 €", "duree": "45min"}, {"nom": "Forfait Maillot Intégral + SIF + Jambes Entières + Pieds + Aisselles", "prix": "150 €", "duree": "1h"}, {"nom": "Forfait Corps Entier toutes zones au choix", "prix": "200 €", "duree": "2h"}]}, {"categorie": "Femmes - Forfait épilation à la cire", "prestations": [{"nom": "Aisselles, Demi-Jambes, Maillot Simple", "prix": "35 €", "duree": "30min"}, {"nom": "Forfait Aisselles + Jambes Entières + Maillot Intégral", "prix": "55 €", "duree": "30min"}]}, {"categorie": "Femmes - Épilation laser", "prestations": [{"nom": "Aisselles", "prix": "40 €", "duree": "15min"}, {"nom": "Demi-Bras", "prix": "60 €", "duree": "15min"}, {"nom": "Bras Entiers", "prix": "100 €", "duree": "30min"}, {"nom": "Mains", "prix": "30 €", "duree": "5min"}, {"nom": "Auréoles Mammaires", "prix": "20 €", "duree": "5min"}, {"nom": "Demi-Jambes", "prix": "80 €", "duree": "30min"}, {"nom": "Jambes Entières", "prix": "150 €", "duree": "45min"}, {"nom": "Pieds", "prix": "30 €", "duree": "10min"}, {"nom": "Maillot Simple", "prix": "50 €", "duree": "15min"}, {"nom": "Maillot Échancré", "prix": "60 €", "duree": "20min"}, {"nom": "Maillot Intégral", "prix": "70 €", "duree": "25min"}, {"nom": "Sillon Interfessier (SIF)", "prix": "20 €", "duree": "10min"}, {"nom": "Ventre", "prix": "40 €", "duree": "15min"}, {"nom": "Dos", "prix": "40 €", "duree": "15min"}, {"nom": "Fesses", "prix": "50 €", "duree": "20min"}, {"nom": "Lèvre Supérieure", "prix": "20 €", "duree": "5min"}, {"nom": "Menton", "prix": "20 €", "duree": "5min"}, {"nom": "Visage Complet", "prix": "60 €", "duree": "20min"}]}, {"categorie": "Femmes - Épilation à la cire", "prestations": [{"nom": "Aisselles", "prix": "15 €", "duree": "15min"}, {"nom": "Demi-Bras", "prix": "15 €", "duree": "15min"}, {"nom": "Bras Entiers", "prix": "25 €", "duree": "30min"}, {"nom": "Ventre", "prix": "10 €", "duree": "15min"}, {"nom": "Dos", "prix": "10 €", "duree": "15min"}, {"nom": "Demi-Jambes", "prix": "20 €", "duree": "20min"}, {"nom": "Jambes Entières", "prix": "30 €", "duree": "30min"}, {"nom": "Maillot Simple", "prix": "15 €", "duree": "15min"}, {"nom": "Maillot Échancré", "prix": "20 €", "duree": "20min"}, {"nom": "Maillot Intégral", "prix": "25 €", "duree": "25min"}, {"nom": "Sillon Interfessier (SIF)", "prix": "10 €", "duree": "10min"}, {"nom": "Fesses", "prix": "15 €", "duree": "15min"}, {"nom": "Lèvre Supérieure", "prix": "10 €", "duree": "10min"}, {"nom": "Menton", "prix": "10 €", "duree": "10min"}, {"nom": "Visage Complet", "prix": "20 €", "duree": "20min"}]}, {"categorie": "Hommes - Épilation laser", "prestations": [{"nom": "Aisselles", "prix": "50 €", "duree": "30min"}, {"nom": "Torse", "prix": "130 €", "duree": "30min"}, {"nom": "Dos Entier", "prix": "150 €", "duree": "30min"}, {"nom": "Dos Entier + Torse", "prix": "200 €", "duree": "1h"}]}];
+
+    const container = document.getElementById('accordion-container');
+    data.forEach((cat, index) => {
+      const item = document.createElement('div');
+      item.className = 'accordion-item';
+
+      const header = document.createElement('div');
+      header.className = 'accordion-header';
+      header.textContent = cat.categorie;
+      header.addEventListener('click', () => {
+        const content = item.querySelector('.accordion-content');
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+
+      const content = document.createElement('div');
+      content.className = 'accordion-content';
+
+      cat.prestations.forEach(p => {
+        const prestation = document.createElement('div');
+        prestation.className = 'prestation';
+        prestation.innerHTML = `<span>${p.nom}</span><span>${p.prix} - ${p.duree}</span>`;
+        content.appendChild(prestation);
+      });
+
+      item.appendChild(header);
+      item.appendChild(content);
+      container.appendChild(item);
+    });
+  </script>
+</body>
+</html>
