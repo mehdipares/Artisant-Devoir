@@ -1,22 +1,4 @@
 
-@font-face {
-  font-family: 'Graphik';
-  src: url('/fonts/Graphik/Graphik-Regular.woff2') format('woff2'),
-       url('/fonts/Graphik/Graphik-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Graphik';
-  src: url('/fonts/Graphik/Graphik-Bold.woff2') format('woff2'),
-       url('/fonts/Graphik/Graphik-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* Bannière Header */
 .navbar {
   background: white !important;
@@ -94,7 +76,6 @@ footer {
 .btn-primary:hover {
   background-color: #003366;       /* Encore plus foncé au survol */
 }
-
 
 body {
   font-family: 'Graphik', sans-serif;
