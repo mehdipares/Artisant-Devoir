@@ -1,17 +1,8 @@
 @font-face {
   font-family: 'Graphik';
-  src: url('/fonts/Graphik/Graphik-Regular.woff2') format('woff2'),
-       url('/fonts/Graphik/Graphik-Regular.woff') format('woff');
+  src: url('/fonts/Graphik/Graphik-Regular-Trial.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Graphik';
-  src: url('/fonts/Graphik/Graphik-Bold.woff2') format('woff2'),
-       url('/fonts/Graphik/Graphik-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
