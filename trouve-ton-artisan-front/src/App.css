@@ -1,8 +1,8 @@
 
 @font-face {
   font-family: 'Graphik';
-  src: url('/fonts/Graphik/Graphik-Regular.woff2') format('woff2'),
-       url('/fonts/Graphik/Graphik-Regular.woff') format('woff');
+  src: url('/trouve-ton-artisan-front/src/fonts/Graphik\ Family/.woff2') format('woff2'),
+       url('/trouve-ton-artisan-front/src/fonts/Graphik\ Family/woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
