@@ -64,7 +64,7 @@ textarea:focus {
 .navbar,
 footer {
   background-color: #002244;       /* Bleu foncé pour un meilleur contraste */
-  color: white;                    /* Texte blanc lisible */
+  color: black;                    /* Texte blanc lisible */
 }
 
 /* Amélioration du contraste des boutons */
