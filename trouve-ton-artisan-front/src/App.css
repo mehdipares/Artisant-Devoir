@@ -75,3 +75,6 @@ footer {
 .btn-primary:hover {
   background-color: #003366;       /* Encore plus foncé au survol */
 }
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
